@@ -1,0 +1,22 @@
+<div class="product-grid">
+  <div class="product-card" *ngFor="let product of products">
+    <img
+      class="product-card__image"
+      [src]="product.imageUrl"
+      [alt]="product.name"
+      onerror="this.src='assets/images/placeholder.jpg';"
+    />
+
+    <div class="product-card__badges">
+    </div>
+
+    <h3 class="product-card__title">{{ product.name }}</h3>
+    <p class="product-card__description">{{ product.description }}</p>
+    <p class="product-card__price">${{ product.price | number: '' }}</p>
+
+
+    <div class="product-card__buttons">
+      <button class="button button--primary">Cart</button>
+    </div>
+  </div>
+</div>
